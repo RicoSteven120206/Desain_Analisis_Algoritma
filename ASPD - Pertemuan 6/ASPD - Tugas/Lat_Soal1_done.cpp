@@ -4,52 +4,28 @@ using namespace std;
 
 class Mahasiswa {
 	private:
-		string nama[];
-		string npm[];
-		double nilai[];
+		string nama;
+		string npm;
+		int nilai;
 		
 	public:
-		void setNamaMahasiswa(string namaM[], int jmlhD) {
-			for (int i = 0; i < jmlhD; i++) {
-			nama[i] = namaM[i];
-			}
+		void setNamaMahasiswa(string namaM, string npmM, int nilaiM) {
+			nama = namaM;
+			npm = npmM;
+			nilai = nilaiM;
 		}
 		
-		void setNpmMahasiswa(string npmM[], int jmlhD) {
-			for (int i = 0; i < jmlhD; i++) {
-			npm[i] = npmM[i];
-			}
+		string getDataMahasiswa() {
+			return nama;
+			return npm;
+			return nilai;
 		}
-		
-		void setNilaiMahasiswa(double nilaiM[], int jmlhD) {
-			for (int i = 0; i < jmlhD; i++) {
-			nilai[i] = nilaiM[i];
-			}
-		}
-		
-		string getNamaMahasiswa(int i) {
-			return nama[i];
-		}
-		
-		string getNpmMahasiswa(int i) {
-			return npm[i];
-		}
-		
-		double getNilaiMahasiswa(int i) {
-			return nilai[i];
-		}
-		
 };
 
 int main() {
 	int n;
 	string nama, npm;
-	double nilai;
-	
-//	string *ptrNama = nama;
-//	string *ptrNpm = npm;
-//	double *ptrNilai = nilai;
-	
+	int nilai;
 	
 	cout<<"Masukkan Jumlah Data Mahasiswa yang akan di input : ";
 	cin>>n;
@@ -58,16 +34,13 @@ int main() {
 	cout<<"\nMasukkan Data Mahasiswa\n";
 	for (int i = 0; i < n; i++) {
 	cout<<"Nama Mahasiswa ke-"<<i+1<<"	: ";
-	cin>>nama[i];
-	cout<<nama[i];
+	cin>>mahasiswa[i].nama;
 	cout<<"NPM Mahasiswa ke-"<<i+1<<"	: ";
-	cin>>npm[i];
+	cin>>mahasiswa[i].npm;
 	cout<<"Nilai Mahasiswa ke-"<<i+1<<"	: ";
-	cin>>nilai[i];
+	cin>>mahasiswa[i].nilai;
 	cout<<endl;
-	mahasiswa.setNamaMahasiswa(nama, n);
-	mahasiswa.setNpmMahasiswa(npm, n);
-	mahasiswa.setNilaiMahasiswa(nilai, n);
+	mahasiswa.setNamaMahasiswa(nama, npm, nilai, n);
 	cout<<endl;
 	}
 	
@@ -94,8 +67,8 @@ int main() {
 
 	cout<<"Urutan Data Mahasiswa"<<endl;
 	for(int j = 0; j < n; j++) {
-	cout<<"Nama Mahasiswa	: "<<mahasiswa.getNamaMahasiswa(j)<<endl;
-	cout<<"NPM Mahasiswa	: "<<mahasiswa.getNpmMahasiswa(j)<<endl;
-	cout<<"Nilai Mahasiswa	: "<<mahasiswa.getNilaiMahasiswa(j)<<endl;
+	cout<<"Nama Mahasiswa	: "<<mahasiswa.getDataMahasiswa<<endl;
+//	cout<<"NPM Mahasiswa	: "<<mahasiswa.getNpmMahasiswa<<endl;
+//	cout<<"Nilai Mahasiswa	: "<<mahasiswa.getNilaiMahasiswa<<endl;
 	}
 }
